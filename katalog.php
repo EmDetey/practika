@@ -17,10 +17,16 @@
                 <img src=<?=$tovar['img']?> alt="">
                 <h1><?=$tovar['title']?></h1>
                 <div class="t-c">
-                    <form action="/tovarCard.php" method="get">
-                        <input type="hidden"  name = "tovar_id" value=<?=$item['id']?>>
-                        <button  class="onCorz" type="submit">В корзину</button>
-                    </form>
+                    <p><?=$tovar['price']?> RUB</p>
+                   
+                        
+                        <button  class="onCorz" type="submit">В корзину
+                        <input type="hidden" class="tovarId"  name = "tovar_id" value=<?=$tovar['id']?>>
+                        <input type="hidden" class="tovarImg"  name = "tovar_id" value=<?=$tovar['img']?>>
+                        <input type="hidden" class="tovarTitle"  name = "tovar_id" value=<?=$tovar['title']?>>
+                        <input type="hidden" class="tovarPrice"  name = "tovar_id" value=<?=$tovar['price']?>>
+                        </button>
+                    
                 </div>
             </div>
 

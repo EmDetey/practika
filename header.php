@@ -1,8 +1,10 @@
 <?php 
+error_reporting(0);
 session_start();
 $connect = mysqli_connect('127.0.0.1','root','','truegames');
-if(isset($_REQUEST['OnExit'])) session_destroy();
+
 if($connect === false) echo "erro connect to database";
+if(isset($_REQUEST['OnExit'])) session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +30,7 @@ if($connect === false) echo "erro connect to database";
         <a href="/authPage.php">Авторизация</a>
         <?php else:?>
         <a href="?OnExit">Выйти</a>
-        <a href="">Корзина</a>
+        <a href="javascript:return false" class='korz-item'>Корзина</a>
         <?endif?>
         <?if($_SESSION['login'] === 'admin'):?>
             <a href="/admin.php">Администрирование</a>
@@ -37,3 +39,26 @@ if($connect === false) echo "erro connect to database";
 
     </div>
 </header>
+<div class="korz">
+    <?
+        $korz_items = mysqli_query($connect,"SELECT * FROM `korzina` WHERE '$_SESSION[user_id]'= `user_id`");
+        
+            while(($korz_item = mysqli_fetch_assoc($korz_items))):
+
+        ?>
+            <div class="k-item">
+                <img src=<?=$korz_item['img']?> alt="">
+
+                <h2 style="color:orange"><?=$korz_item['title']?></h2>
+
+                <h2 style="color:green"><?=$korz_item['price']?> RUB</h2>
+
+                
+            </div>
+        <?
+        endwhile;
+        
+        ?>
+        
+    
+</div>

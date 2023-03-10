@@ -19,7 +19,10 @@ if(mysqli_num_rows($selectUsers) == 0)
 }
 if(empty($errors))
 {
+    $user_id =  mysqli_query($connect,"SELECT * FROM `users` WHERE '$_POST[login]'= `login`");
+    $user_id_assoc = mysqli_fetch_assoc($user_id);
    $_SESSION['login'] = $_POST['login'];
+   $_SESSION['user_id'] = $user_id_assoc['id'];
    header("Location: /");
   
 
@@ -29,8 +32,16 @@ if(empty($errors))
 <div class="wrapper">
 
 <form action="" method="post" class="reg-form">
-    <div class="alert-error">
-        
+<div class="alert-error">
+        <?if(isset($_REQUEST['sub-auth'])):?>
+            <?if(!empty($errors)):?>
+                <?foreach($errors as $error):?>
+                    <p><?=$error?></p>
+                <?endforeach?>
+            <?else:?>
+                <p>Успешно</p>
+                <?endif?>
+            <?endif?>            
     </div>
    
     <input type="text" name="login" placeholder="логин">

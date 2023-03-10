@@ -33,7 +33,15 @@ if(empty($errors))
 
 <form action="" method="post" class="reg-form">
     <div class="alert-error">
-        
+        <?if(isset($_REQUEST['sub-reg'])):?>
+            <?if(!empty($errors)):?>
+                <?foreach($errors as $error):?>
+                    <p><?=$error?></p>
+                <?endforeach?>
+            <?else:?>
+                <p>Успешно</p>
+                <?endif?>
+            <?endif?>            
     </div>
     <input type="text" name="name" placeholder="имя">
     <input type="text" name="surname" placeholder="фамилия">
