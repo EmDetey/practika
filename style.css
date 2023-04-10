@@ -1,0 +1,304 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: green;
+    font-size: 19px;
+    font-weight: 400;
+}
+a:hover{
+    
+    transition-duration: 0.4s;
+    color: black;
+}
+header{
+    display: flex;
+    justify-content: center;
+    gap:120px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 120px;
+    background: url(https://www.desktopbackground.org/download/1280x1024/2011/01/27/148485_dark-wallpapers-desktop-photos-detail_1920x1200_h.jpg);
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+}
+.logo h1 span{
+    color: green !important;
+}
+.wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+}
+input{
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+}
+input[type='submit']
+{
+    border-radius: 2px;
+    height: 40px;
+    border: unset;
+}
+input[type='submit']:hover{
+    transition-duration: 0.6s;
+    background: rgb(9, 136, 158);
+    color: white;
+}
+.title{
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+    max-width: 1200px;
+
+}
+.con-cat{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    max-width: 230px;
+    border-radius: 10px;
+    width: 100%;
+    transition-duration: 0.3s;
+}
+.card:hover{
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 10px rgb(73, 73, 240);
+}
+.card img{
+    width: 90%;
+}
+.t-c
+{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: end;
+}
+.onCorz{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: orange;
+    color: white;
+}
+
+.container{
+    display:flex;
+    width:100%;
+    
+    flex-direction: column;
+    gap: 90px;
+}
+
+.item{
+    display: flex;
+    width: 100%;
+    
+    justify-content: start;
+    flex-direction:row;
+    background: rgb(162, 162, 255);
+    transition-duration:0.4s;
+
+}
+.item:hover{
+    
+    background: rgb(130, 130, 255);
+    transition-duration:0.4s;
+
+}
+.item form{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: start;
+    align-items: end;
+    flex-direction:row;
+
+}
+.item form img{
+    
+    width: 100%;
+    max-width: 300px;
+    
+
+}
+
+.korz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 300px;
+    background: rgb(242, 147, 14);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: absolute;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 50px;
+    top: -500%;
+    margin-top: 120px;
+    z-index: 99999999999999999;
+
+}
+
+.k-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+
+    background: white;
+    gap: 90px;
+}
+.k-item img{
+    max-width: 300px;
+    width: 100%;
+}
+
+.tovar-card-fluid{
+    display: none;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    min-height: 500px;
+    background: white;
+    box-shadow: 0px 0px 10px black;
+    margin-top: 150px;
+
+    
+}
+
+.tovar-card-fluid img{
+    max-width: 500px;
+    width: 100%;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container__title{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    max-width: 1200px;
+}
+.container__block
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container__block__img{
+    max-width: 300px;
+}
+.container__block__text{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+}
+.container__block__text p{
+    font-size: 24px;
+    padding: 30px;
+    text-shadow: 1px 1px 1px greenyellow;
+}
+.container__block__text::before{
+    content: url(https://cdn4.iconfinder.com/data/icons/smashicons-tech-md-solid-vol-1/24/56_-_Xbox_One_Controller_technology_device_gadget-1024.png);
+    position: absolute;
+    margin-top: -410px;
+    margin-left: -537px;
+    transform: rotate(86deg);
+    transform: scale(0.1);
+}
+.slide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+}
+.slide img{
+    width: 90%;
+}
+
+.slider-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.slider{
+    max-width: 1200px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contacts{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    max-width: 1200px;
+    gap: 13px;
+    
+}
+.contacts section{
+    font-size: 18px;
+}
