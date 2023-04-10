@@ -12,6 +12,16 @@ if(isset($_REQUEST['OnExit'])) session_destroy();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <title>Document</title>
@@ -25,6 +35,10 @@ if(isset($_REQUEST['OnExit'])) session_destroy();
     <div class="menu">
         <a href="/">О нас</a>
         <a href="/katalog.php">Каталог</a>
+        
+        
+        <a href="/where.php">Где нас найти?</a>
+        
         <?php if(empty($_SESSION)): ?>
         <a href="/regPage.php" id="rg-b">Регистрация</a>
         <a href="/authPage.php">Авторизация</a>
@@ -41,7 +55,7 @@ if(isset($_REQUEST['OnExit'])) session_destroy();
 </header>
 <div class="korz">
     <?
-        $korz_items = mysqli_query($connect,"SELECT * FROM `korzina` WHERE '$_SESSION[user_id]'= `user_id`");
+        $korz_items = mysqli_query($connect,"SELECT * FROM `korzina` WHERE '$_SESSION[user_id]'= `user_id` ORDER BY `id` DESC");
         
             while(($korz_item = mysqli_fetch_assoc($korz_items))):
 

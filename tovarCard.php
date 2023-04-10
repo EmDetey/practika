@@ -1,11 +1,12 @@
-<? require_once "header.php";
-     $tovarCard = mysqli_query($connect,"SELECT * FROM `tovar` WHERE `id` = '$_GET[tovar_id]'");
+<?php 
+ session_start();
+ $connect = mysqli_connect('127.0.0.1','root','','truegames');
+ 
+ $tovaCard = mysqli_query($connect,"SELECT * FROM `tovar` WHERE '$_GET[tovarId]' = `id`");
+$tovarC = mysqli_fetch_assoc($tovaCard);
+$_SESSION['id_tovar'] = $_GET['tovarId'];
+ $_SESSION = $tovarC['img_tovar'];
+ $_SESSION = $tovarC['title_tovar'];
+ $_SESSION['price_tovar'] = $tovarC['price'];
 
-?>
-<div class="wrapper">
-    <div class="tovar-card">
-        <img src=<?=mysqli_fetch_assoc($tovarCard)['img'];?> alt="">
-        <h1><?=mysqli_fetch_assoc($tovarCard)['title'];?></h1>
-    </div>
-</div>
-<? require_once "footer.php"; ?>
+ echo $_SESSION['id_tovar'];

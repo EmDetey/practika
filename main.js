@@ -1,8 +1,15 @@
 $(document).ready(function(){
     
+$('.slider').slick({
+    infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+});
+
+
  $(".onCorz").on("click",function(e){
     e.preventDefault()
-    
+    $(this).attr("disabled","disabled");
     $.ajax({
         url:"/korx.php",
         method:"post",
@@ -18,6 +25,29 @@ $(document).ready(function(){
         }
     })
  })
+
+
+//  $(".card").on("click",function(e){
+//     e.preventDefault()
+//     $.ajax({
+//         url:"/tovarCard.php",
+//         method:"get",
+//         data: {
+//             'tovarId': $(this).find('.tovarIdC').val(),
+
+//         'tovarImg':$(this).find('.tovarImg').val(),
+//         'tovarTitle':$(this).find('.tovarTitle').val(),
+//         'tovarPrice':$(this).find('.tovarPrice').val()
+//         },
+//         success: function(data)
+//         {
+            
+//             $('.tovar-card-fluid').css("display","flex")
+            
+//             console.log(data)
+//         }
+//     })
+//  })
 
 let switcher_k = false
 const korz_item = document.querySelector('.korz-item')
